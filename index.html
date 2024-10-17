@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #calculator {
+            width: 250px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="result" disabled>
+        <div>
+            <button onclick="clearResult()">C</button>
+            <button onclick="deleteLast()">CE</button>
+            <button onclick="calculate('%')">%</button>
+            <button onclick="calculate('/')">/</button>
+        </div>
+        <div>
+            <button onclick="calculate('7')">7</button>
+            <button onclick="calculate('8')">8</button>
+            <button onclick="calculate('9')">9</button>
+            <button onclick="calculate('*')">*</button>
+        </div>
+        <div>
+            <button onclick="calculate('4')">4</button>
+            <button onclick="calculate('5')">5</button>
+            <button onclick="calculate('6')">6</button>
+            <button onclick="calculate('-')">-</button>
+        </div>
+        <div>
+            <button onclick="calculate('1')">1</button>
+            <button onclick="calculate('2')">2</button>
+            <button onclick="calculate('3')">3</button>
+            <button onclick="calculate('+')">+</button>
+        </div>
+        <div>
+            <button onclick="calculate('0')">0</button>
+            <button onclick="calculate('.')">.</button>
+            <button onclick="calculate('=')">=</button>
+        </div>
+    </div>
+
+    <script>
+        const resultInput = document.getElementById('result');
+
+        function calculate(value) {
+            resultInput.value += value;
+        }
+
+        function clearResult() {
+            resultInput.value = '';
+        }
+
+        function deleteLast() {
+            resultInput.value = resultInput.value.slice(0, -1);
+        }
+
+        function evaluate() {
+            try {
+                resultInput.value = eval(resultInput.value);
+            } catch (error) {
+                resultInput.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
