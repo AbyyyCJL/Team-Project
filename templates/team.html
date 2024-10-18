@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #dbf069;
+    margin: 0;
+    padding: 0;
+    }
+    
+    nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 1rem;
+    list-style-type: none;
+    }
+    
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+    background-color: #555;
+    }
+    
+    .team-container {
+    text-align: center;
+    margin: 2rem auto;
+    }
+    
+    h1 {
+    margin-bottom: 2rem;
+    color: #333;
+    }
+    
+    .team-member {
+    display: inline-block;
+    width: 200px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    }
+    
+    .team-member img {
+    width: 150px;  /* Adjust the size as needed */
+    height: 150px;
+    border-radius: 50%;  /* This makes the image circular */
+    object-fit: cover;  /* Ensures the image fits the circular frame */
+    margin-bottom: 1rem;
+    }
+
+    .team-member:hover {
+    transform: scale(1.05);
+    }
+    
+    .team-member img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    }
+    
+    h3 {
+    margin-bottom: 0.5rem;
+    color: #444;
+    }
+    
+    p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    }
+    
+    </style>    
+
+</head>
+<body>
+    <div class="team-container">
+        <h1>Meet Our Team</h1>
+        
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='team_images/ayush.jpg') }}" alt="Aayush Parab">
+            <h3>Aayush Parab</h3>
+            <p>Lead Developer for the back-end systems, ensuring the efficiency and reliability of the database and server-side logic.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='team_images/Abhay.jpg') }}" alt="Abhay Patil">
+            <h3>Abhay Patil</h3>
+            <p>Front-end Developer, responsible for creating user-friendly interfaces and making sure the website is responsive and smooth.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='team_images/abhishek.jpg') }}" alt="Abhishek Bhadarge">
+            <h3>Abhishek Bhadarge</h3>
+            <p>Database Administrator, handling all data management tasks and ensuring seamless interaction with the system’s database.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='team_images/aishwarya.jpg') }}" alt="Aishwarya Patil">
+            <h3>Aishwarya Patil</h3>
+            <p>UI/UX Designer, ensuring the system's interface is intuitive and easy to navigate for all users.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='team_images/akshata.jpg') }}" alt="Akshata Rane">
+            <h3>Akshata Rane</h3>
+            <p>Quality Assurance Lead, responsible for testing the system and ensuring it meets all functional and non-functional requirements.</p>
+        </div>
+    </div>
+</body>
+</html>
